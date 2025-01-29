@@ -4,7 +4,7 @@ from airflow.decorators import dag, task
 from datetime import datetime
 
 @dag(
-        dag_id='minha primeira dag',
+        dag_id='primeiradag',
         description='ETl do pai',
         schedule="* * * * *",
         start_date= datetime(2025,1,27),
@@ -30,4 +30,6 @@ def pipeline():
     t3 = terceira_atividade()
 
     t1 >> t2 >> t3
+
+pipeline()
     
